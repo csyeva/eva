@@ -14,6 +14,9 @@
 [java 架构视频](http://www.mqyjq.com/topics/video/27) <br/>
 [java 视频](http://www.mqyjq.com/topics/video/17)
 
+## 强力推荐
+[redis 视频](http://www.mqyjq.com/topics/video/34)
+
 ## 学习文档
 
 >* JavaScript学习笔记_AMD规范
