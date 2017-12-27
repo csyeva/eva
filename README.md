@@ -5,6 +5,17 @@
 - [x] 心得
 
 
+## 强力推荐
+
+[nodejs 视频](http://www.mqyjq.com/topics/video/3) <br/>
+[react 视频](http://www.mqyjq.com/topics/video/5)
+
+## 强力推荐
+[java 架构视频](http://www.mqyjq.com/topics/video/27) <br/>
+[java 视频](http://www.mqyjq.com/topics/video/17)
+
+## 强力推荐
+[redis 视频](http://www.mqyjq.com/topics/video/34)
 
 ## 学习文档
 

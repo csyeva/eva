@@ -1,9 +1,9 @@
 # 从create-react-app学习webpack
 
-##
+## 强力推荐
 
-[nodejs 视频 10元打包](http://www.mqyjq.com/topics/video/3) <br/>
-[react 视频 10元打包](http://www.mqyjq.com/topics/video/5)
+[nodejs 视频](http://www.mqyjq.com/topics/video/3) <br/>
+[react 视频](http://www.mqyjq.com/topics/video/5)
 
 ## 1.没有配置的现代化构建
 > Create React App is a new officially supported way to create single-page React applications. It offers a modern build setup with no configuration.
