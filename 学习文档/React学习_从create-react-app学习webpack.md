@@ -1,5 +1,10 @@
 # 从create-react-app学习webpack
 
+##
+
+[nodejs 视频 10元打包](http://www.mqyjq.com/topics/video/3)
+[react 视频 10元打包](http://www.mqyjq.com/topics/video/5)
+
 ## 1.没有配置的现代化构建
 > Create React App is a new officially supported way to create single-page React applications. It offers a modern build setup with no configuration.
 
@@ -101,7 +106,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
   }
 ```
 
-![image](https://github.com/csy512889371/reactLearn/blob/master/img/reactAntd1.png)
+![image](https://github.com/csyeva/eva/blob/master/img/reactAntd1.png)
 
 
 --env.js
@@ -240,7 +245,7 @@ Files on the left have more priority than files on the right:
 ```
 
 通过打印加上代码的逻辑,我们不难看出 文档给出的env的file 路径符合实际
-![image](https://github.com/csy512889371/reactLearn/blob/master/img/reactAntd2.png)
+![image](https://github.com/csyeva/eva/blob/master/img/reactAntd2.png)
 
 
 ## 2.env的常用方法,
@@ -268,8 +273,8 @@ choosePort(HOST, DEFAULT_PORT)
 HTTPS=true
 PORT=3001
 ```
-![image](https://github.com/csy512889371/reactLearn/blob/master/img/reactAntd4.png)
-![image](https://github.com/csy512889371/reactLearn/blob/master/img/reactAntd3.png)
+![image](https://github.com/csyeva/eva/blob/master/img/reactAntd4.png)
+![image](https://github.com/csyeva/eva/blob/master/img/reactAntd3.png)
 
 
 ## 3.项目相关key存储
@@ -277,7 +282,7 @@ PORT=3001
 首先我们写下如下两个键值对
 
 正则过滤非REACT_APP开头的变量:
-![image](https://github.com/csy512889371/reactLearn/blob/master/img/reactAntd5.png)
+![image](https://github.com/csyeva/eva/blob/master/img/reactAntd5.png)
 
 注意我们在定义一个全局变量的时候一定要注意以REACT_APP开头,当然如果哪些同学不是很满意这个设定,可以在env.js中去除filter.当然不是很推荐.
 
