@@ -94,18 +94,13 @@ public class SpringBootDemo61Application {
 
 ```
 
-├── java                  资源配置文件
-│   ├──messages...             国际化
-│   ├──applicationContext.xml  配置包括jpa-data、国际化等
-│   ├──log4j.properties        日志配置
-│   ├──config.properties       配置项
-│   ├──spring-mvc.xml          SpringMVC配置
-│   │
-│   
-├── resources
+├── java                 
 │   ├── com.eva.learn                          
 │   │   │
 │   │   └── controller   controller
+│   │
+│   
+├── resources
 │   │
 │   ├── static           静态文件
 │   │
