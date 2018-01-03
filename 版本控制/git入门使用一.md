@@ -20,6 +20,23 @@ Git的学习图书和文档
 >* 分别安装cygwin，msysGit和TortoiseGit (其实这三种软件的文字安装过程可以参考《Git权威指南》第三章)
 >* Linux和Mac OS下也有相应Git软件
 
+### 安装cygwin
+[cygwin下载地址](http://www.cygwin.com/)
+
+安装过程中选择安装:
+>* cygwin
+>* git
+>* openssh
+>* vim
+>* nano
+
+### 安装msysGit
+
+
+### TortoiseGit
+
+
+
 # 二、Git的基本操作
 
 >* git config（使用git命令之前，如何配置用户信息？）
