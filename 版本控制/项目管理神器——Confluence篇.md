@@ -1,6 +1,9 @@
 
 # 项目管理神器——Confluence篇
 
+## 安装及其破解下载
+链接: https://pan.baidu.com/s/1bAbPj4 密码: mps7
+
 >* Confluence 作为团队协作与知识管理工具，是澳大利亚Atlassian公司的企业项目管理软件的主打产品之一，主要产品还有有JIRA，Confluence，GreenHopper，Bitbucket，Hipchat，Sourcetree等。
 >* 从它的官网介绍，不难看出Confluece诞生的主要目的便是对团队开发过程中相关的所有文档、方案等资源进行统一管理，便于每一个开发者查看获取资源。
 >* 本文将介绍这款知识管理工具的特点和基本使用。
