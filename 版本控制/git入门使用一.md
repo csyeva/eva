@@ -116,7 +116,7 @@ $git log
 $git status
 ```
 git 生命周期
-![image](https://github.com/csyeva/eva/blob/master/img/github/gitlife.png =100x100)
+![image](https://github.com/csyeva/eva/blob/master/img/github/gitlife.png)
 
 
 演示一下一个文件的改变过程
@@ -143,7 +143,7 @@ git 生命周期
 >* remote repository--远程仓库
 远程仓库，我们用Git进行操作，为了防止数据在自己电脑上丢失，比如错误删除，病毒攻击等原因造成了数据丢失，我们需要备份到远程的服务器上，这个服务器可以理解为远程仓库。
 
-![image](https://github.com/csyeva/eva/blob/master/img/github/gitgn.png)
+![image](https://github.com/csyeva/eva/blob/master/img/github/gitgn.png  =100x100)
 ![image](https://github.com/csyeva/eva/blob/master/img/github/gitgn2.png)
 ![image](https://github.com/csyeva/eva/blob/master/img/github/gitgn3.png)
 
