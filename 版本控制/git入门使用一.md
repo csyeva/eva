@@ -30,6 +30,40 @@ Git的学习图书和文档
 >* vim
 >* nano
 
+Windows7 下Cygwin添加右键菜单
+
+>* 重写Cygwin目录下的Cygwin.bat
+```shell
+@echo off
+set _T=%CD%
+echo %_T
+G:
+chdir G:\env\cygwin\bin
+  
+@rem bash --login -i
+start mintty.exe -e /bin/bash --login -i
+```
+>* 修改.bash_profile文件，位于安装目录/home/（用户名）下。在文件最后添加：
+```shell
+export _T=${_T//\\//}
+if [ $_T == "" ]; then
+export _T=~
+fi
+cd "$_T"
+```
+
+>* 增加右键菜单。将下列代码存为一个reg文件，假设addMenu.reg
+```shell
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCygwin]
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCygwin\command]
+@="G:\\env\\cygwin\\Cygwin.bat"
+```
+>* 双击运行addMenu.reg，完成操作。
+
+
 ### 安装msysGit
 
 
