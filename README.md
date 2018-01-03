@@ -10,7 +10,7 @@
 [react 视频](http://111.231.142.109/topics/video/5) <br/>
 [java 架构视频](http://111.231.142.109/topics/video/27) <br/>
 [java 视频](http://111.231.142.109/topics/video/17) <br/>
-> 请使用Chrome 或者IE10以上浏览器
+**请使用Chrome 或者IE10以上浏览器**
 
 ## 强力推荐
 
