@@ -12,6 +12,8 @@ Git的学习图书和文档
 >* 《Pro.Git中文版》---电子文档 比较适合入门
 >* 《版本控制之道——使用Git》---比较适合入门
 >* 《Git权威指南》--更深入地讲解了Git的操作和背后的原理，还有涉及Git使用的问题
+[git官方文档](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
+
 
 ## Windows下安装和使用Git
 >* 下载命令行客户端cygwin,msysGit和图形客户端TortoiseGit
@@ -114,7 +116,7 @@ $git log
 $git status
 ```
 git 生命周期
-![image](https://github.com/csyeva/eva/blob/master/img/github/gitlife.png)
+![image](https://github.com/csyeva/eva/blob/master/img/github/gitlife.png =100x100)
 
 
 演示一下一个文件的改变过程
