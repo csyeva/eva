@@ -4,7 +4,7 @@
 - [x] demo
 - [x] 心得
 
-## 强力推荐
+## 强力推荐-架构师的成长之路
 [python视频](http://111.231.142.109/topics/video/15) <br/>
 [nodejs 视频](http://111.231.142.109/topics/video/3) <br/>
 [react 视频](http://111.231.142.109/topics/video/5) <br/>
