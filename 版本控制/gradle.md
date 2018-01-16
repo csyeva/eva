@@ -7,25 +7,35 @@
 
 # 构建工具Gradle
 
-> Gradle是什么
+> 1.Gradle是什么
 
 
 一个开源的**项目自动化构建工具**, 建立在Apache Ant和Apache Maven 概念的基础上，并引入了基于Groovy的特定领域语言（DSL）,而不再使用XML形式管理构建脚本
 
-> 主流构建工具
+> 2.主流构建工具
 * Ant 编译、测试、打包
 * Maven 依赖管理、发布
 * Gradle Groovy 
 
-> 构建工具的作用
+> 3.构建工具的作用
 * 依赖管理
 * 测试、打包、发布
 
-> gradle 优点
+> 4.gradle 优点
 * Gradle Wrapper 防止构建环境造成的问题
 * 优秀的API与工具集成
 * 内置Maven与Ivy进行依赖管理
 * 基于Groovy的领域专用语言DSL描述和控制构建逻辑
+
+
+>构建生命周期
+
+* 初始化
+* 配置
+* 执行
+
+# Groovy语法
+
 
 > Groovy
 
@@ -39,25 +49,17 @@ Groovy 是用于Java虚拟机的一种敏捷的动态语言，它是一种成熟
 * 元编程： 注入、拦截、合并、委托方法、操作编译运行行为
 
 
-> Groovy 与java对比
-* Groovy 完全兼容Java的语法
-* 分号是可选的
-* 类、方法默认是public的
-* == 等同于equals(),不会有NullPointerExceptions异常
-
 > 高效的Groovy特性
 * assert语句
 * 可选类型定义
 * 可选的括号
 * 字符串
 
->构建生命周期
-
-* 初始化
-* 配置
-* 执行
-
-# Groovy语法
+> Groovy 与java对比
+* Groovy 完全兼容Java的语法
+* 分号是可选的
+* 类、方法默认是public的
+* == 等同于equals(),不会有NullPointerExceptions异常
 
 
 ```java
@@ -101,6 +103,16 @@ println buildYears.getClass()
 
 ```
 
+
+# 安装
+
+* 安装JDK **java -version**
+* 下载Gradle, https://gradle.org
+* 用户变量 GRADLE_HOME
+* 环境变量 path 中增加 %GRADLE_HOME%\bin;
+* gradle -version
+
+
 build.gradle
 ```java
 //构建脚本中默认都有一个Project实例
@@ -116,16 +128,7 @@ dependencies {
 	compile 'commons-codec:commons-codec:1.6'
 }
 
-
 ```
-
-# 安装
-
-* 安装JDK **java -version**
-* 下载Gradle, https://gradle.org
-* 用户变量 GRADLE_HOME
-* 环境变量 path 中增加 %GRADLE_HOME%\bin;
-* gradle -version
 
 # 构建概要
 
