@@ -175,7 +175,8 @@ eureka:
     lease-renewal-interval-in-seconds: 5
 ```
 
-
+* 提供findById服务
+* 获取服务信息serviceUrl\showInfo
 ```java
 
 @RestController
@@ -188,11 +189,7 @@ public class UserController {
   public User findById(@PathVariable Long id) {
     return this.userRepository.findOne(id);
   }
-}
-```
-
-> 获取服务信息
-```java
+  
   @Autowired
   private EurekaClient eurekaClient;
 
@@ -212,7 +209,9 @@ public class UserController {
     ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
     return localServiceInstance;
   }
+}
 ```
+
 
 
 ## consumer消费者
@@ -247,7 +246,7 @@ public class ConsumerMovieRibbonApplication {
 
 ```
 
-> MovieController
+> findById调用提供者提供的接口
 ```java
 @RestController
 public class MovieController {
@@ -263,6 +262,8 @@ public class MovieController {
 ```
 
 application.yml
+
+* 配置eureka的地址
 
 ```xml
 spring:
