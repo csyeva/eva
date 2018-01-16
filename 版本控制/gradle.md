@@ -8,6 +8,8 @@
 # 构建工具Gradle
 
 > Gradle是什么
+
+
 一个开源的**项目自动化构建工具**, 建立在Apache Ant和Apache Maven 概念的基础上，并引入了基于Groovy的特定领域语言（DSL）,而不再使用XML形式管理构建脚本
 
 > 主流构建工具
