@@ -52,5 +52,235 @@
  
 > 综上，Eureka通过心跳检测、健康检查、客户端缓存等机制，确保了系统的高可用性、灵活性和可伸缩性。
 
+# 代码解析
+
+## Eureka 服务器端
+
+> 引入依赖
+
+```xml
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+```
+
+> 应用入口增加EnableEurekaServer
+```java
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(EurekaApplication.class, args);
+  }
+}
+
+```
+
+> 配置文件
+
+* security.user.name\password 登录eureka后台的帐号密码
+* eureka.datacenter 设置eureka的数据中心名称
+* eureka.environment 设置eureka的环境名称
+
+```xml
+# 增加用户名和密码
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password123
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false # 单机环境设置成false
+    fetch-registry: false # 单机环境设置成false
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  datacenter: cloud
+  environment: product
+```
+
+## provider服务提供者
+
+* 引入服务注册eureka
+* 引入端点actuator
+* http://localhost:7900/env 环境
+* http://localhost:7900/health 监控状态
+
+```xml
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+```
+
+
+> 应用入口增加 @EnableEurekaClient 或者 @EnableDiscoveryClient
+```java
+@SpringBootApplication
+@EnableEurekaClient
+public class MicroserviceSimpleProviderUserApplication {
+
+  public static void main(String[] args) {
+    SpringApplication.run(MicroserviceSimpleProviderUserApplication.class, args);
+  }
+}
+
+```
+
+> 配置文件
+
+* spring.application.name 指定服务名称（全部小写）
+* eureka.instance.instance-id 指定服务在eureka上的显示
+* eureka.client.healthcheck.enabled 健康检查
+
+> 健康检查
+
+* Eureka Server与Eureka Client之间使用心跳机制来确定Eureka Client的状态，默认情况下，服务器端与客户端的心跳保持正常，应用程序就会始终保持“UP”状态，所以微服务的UP并不能完全反应应用程序的状态。
+* Spring Boot Actuator提供了/health端点，该端点可展示应用程序的健康信息，只有将该端点中的健康状态传播到Eureka Server就可以了，实现这点很简单，只需为微服务配置如下内容
+
+```xml
+server:
+  port: 7900
+  
+spring:
+  application:
+    name: microservice-provider-user
+	
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    metadata-map:
+      zone: ABC      # eureka可以理解的元数据
+      lilizhou: BBC  # 不会影响客户端行为
+    lease-renewal-interval-in-seconds: 5
+```
+
+
+```java
+
+@RestController
+public class UserController {
+
+  @Autowired
+  private UserRepository userRepository;
+
+  @GetMapping("/simple/{id}")
+  public User findById(@PathVariable Long id) {
+    return this.userRepository.findOne(id);
+  }
+}
+```
+
+> 获取服务信息
+```java
+  @Autowired
+  private EurekaClient eurekaClient;
+
+  @Autowired
+  private DiscoveryClient discoveryClient;
+  
+  //获取服务提供的ip
+  @GetMapping("/eureka-instance")
+  public String serviceUrl() {
+    InstanceInfo instance = this.eurekaClient.getNextServerFromEureka("MICROSERVICE-PROVIDER-USER", false);
+    return instance.getHomePageUrl();
+  }
+
+  //获取服务提供者信息
+  @GetMapping("/instance-info")
+  public ServiceInstance showInfo() {
+    ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
+    return localServiceInstance;
+  }
+```
+
+
+## consumer消费者
+
+* 引入eureka依赖
+```java
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+```
+
+* 使用this.restTemplate调用服务提供者的接口
+* 使用ribbon 做客户端负载均衡 @LoadBalanced 
+* 默认负载均衡的方式是轮询
+
+```java
+@SpringBootApplication
+@EnableEurekaClient
+public class ConsumerMovieRibbonApplication {
+
+  @Bean
+  @LoadBalanced
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(ConsumerMovieRibbonApplication.class, args);
+  }
+}
+
+```
+
+> MovieController
+```java
+@RestController
+public class MovieController {
+  @Autowired
+  private RestTemplate restTemplate;
+
+  @GetMapping("/movie/{id}")
+  public User findById(@PathVariable Long id) {
+    return this.restTemplate.getForObject("http://microservice-provider-user/simple/" + id, User.class);
+  }
+}
+
+```
+
+application.yml
+
+```xml
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon
+server:
+  port: 8010
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+```
+
+
 
 
