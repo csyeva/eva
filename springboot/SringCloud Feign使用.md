@@ -75,7 +75,9 @@ public class MovieController {
 
 # 指定特定接口的负载均衡
 ```java
-
+microservice-provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 ```
 
 
