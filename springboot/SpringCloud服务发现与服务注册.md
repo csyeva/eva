@@ -151,6 +151,7 @@ public class MicroserviceSimpleProviderUserApplication {
 
 * Eureka Server与Eureka Client之间使用心跳机制来确定Eureka Client的状态，默认情况下，服务器端与客户端的心跳保持正常，应用程序就会始终保持“UP”状态，所以微服务的UP并不能完全反应应用程序的状态。
 * Spring Boot Actuator提供了/health端点，该端点可展示应用程序的健康信息，只有将该端点中的健康状态传播到Eureka Server就可以了，实现这点很简单，只需为微服务配置如下内容
+* eureka.instance.appname 设置后会替换spring.application.name 在eureka 的dashboard
 
 ```xml
 server:
@@ -173,6 +174,7 @@ eureka:
       zone: ABC      # eureka可以理解的元数据
       lilizhou: BBC  # 不会影响客户端行为
     lease-renewal-interval-in-seconds: 5
+    appname: microservice-provider-user
 ```
 
 * 提供findById服务
@@ -211,8 +213,6 @@ public class UserController {
   }
 }
 ```
-
-
 
 ## consumer消费者
 
@@ -282,6 +282,9 @@ eureka:
 
 ```
 
+## 客户端地址
+* 查看eraka接口信息 http://localhost:8761/eureka/apps
+* 查看eraka指定接口信息 http://localhost:8761/eureka/apps/microservice-provider-user/
 
 
 
