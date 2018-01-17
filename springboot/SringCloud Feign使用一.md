@@ -1,4 +1,6 @@
-# SpringCloud Feign使用一
+# SpringCloud Feign使用二
+
+[SpringCloud Feign使用一](http://blog.csdn.net/qq_27384769/article/details/79081014)
 
 ## 一使用原生Feign注解
 
