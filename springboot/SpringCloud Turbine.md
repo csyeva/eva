@@ -42,7 +42,6 @@ turbine:
   # 2. clusterNameExpression: "'default'" 时 clusterConfig: default 同时设置为default
   # 3. clusterNameExpression: metadata['cluster']时 应用配置 eureka.instance.metadata-map.cluster:ABC 则 clusterConfig 也配置成ABC
   
-
 ```
 
 > http://localhost:8031/turbine.stream 地址查看接口信息
@@ -53,6 +52,8 @@ turbine:
 * 访问dashboard http://localhost:8030/hystrix
 * 在Hystrix Dashboard 中填入 http://localhost:8031/turbine.stream 
 * 点击 Monitor Stream 查看
+
+
 
 
 
