@@ -65,7 +65,7 @@ uat: env=UAT
 生产：env=PRO
 ```
 
-## 例子
+## 客户端例子
 
 * @Component 设置组件名称
 * @RefreshScope 指定配置改变可以刷新
