@@ -33,7 +33,7 @@
 
 # 三、 架构
 
-![image]()
+![image](https://github.com/csyeva/eva/blob/master/img/zabon/zabon.jpg)
 
 每台服务器，都有安装falcon-agent，falcon-agent是一个golang开发的daemon程序，用于自发现的采集单机的各种数据和指标，这些指标包括不限于以下几个方面，共计200多项指标。
 
