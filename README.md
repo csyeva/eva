@@ -5,24 +5,24 @@
 - [x] 心得
 
 ## 强力推荐-架构师的成长之路 qq群688324454
-[python视频](http://111.231.142.109/topics/video/15) <br/>
-[nodejs 视频](http://111.231.142.109/topics/video/3) <br/>
-[react 视频](http://111.231.142.109/topics/video/5) <br/>
-[java 架构视频](http://111.231.142.109/topics/video/27) <br/>
-[java 视频](http://111.231.142.109/topics/video/17) <br/>
+[python视频](http://www.ctoedu.cn/topics/video/15) <br/>
+[nodejs 视频](http://www.ctoedu.cn/topics/video/3) <br/>
+[react 视频](http://www.ctoedu.cn/topics/video/5) <br/>
+[java 架构视频](http://www.ctoedu.cn/topics/video/27) <br/>
+[java 视频](http://www.ctoedu.cn/topics/video/17) <br/>
 **请使用Chrome 或者IE10以上浏览器**
 
 ## 强力推荐
 
-[nodejs 视频](http://www.mqyjq.com/topics/video/3) <br/>
-[react 视频](http://www.mqyjq.com/topics/video/5)
+[nodejs 视频](http://www.ctoedu.cn/topics/video/3) <br/>
+[react 视频](http://www.ctoedu.cn/topics/video/5)
 
 ## 强力推荐
-[java 架构视频](http://www.mqyjq.com/topics/video/27) <br/>
-[java 视频](http://www.mqyjq.com/topics/video/17)
+[java 架构视频](http://www.ctoedu.cn/topics/video/27) <br/>
+[java 视频](http://www.ctoedu.cn/topics/video/17)
 
 ## 强力推荐
-[redis 视频](http://www.mqyjq.com/topics/video/34)
+[redis 视频](http://www.ctoedu.cn/topics/video/34)
 
 ## 学习文档
 
